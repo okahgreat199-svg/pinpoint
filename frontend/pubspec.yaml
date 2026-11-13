@@ -1,0 +1,67 @@
+name: seat_charter
+description: "SeatCharter: QR + location attendance for CS32005."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1
+
+# Versions are resolved with `flutter pub add`; see pubspec.lock.
+dependencies:
+  android_id: ^0.6.0
+  app_links: ^7.2.2
+  device_info_plus: ^13.3.0
+  dio: ^5.11.1
+  firebase_app_check: ^0.5.1
+  firebase_core: ^5.1.0
+  firebase_messaging: ^17.0.1
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^3.5.0
+  flutter_secure_storage: ^11.2.0
+  geolocator: ^14.0.1
+  mobile_scanner: ^7.5.0
+  pointycastle: ^4.0.0
+  qr_flutter: ^4.1.0
+  shared_preferences: ^2.5.6
+  wakelock_plus: ^1.8.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: PlusJakartaSans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans-Light.ttf
+          weight: 300
+        - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/PlusJakartaSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/PlusJakartaSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/PlusJakartaSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/PlusJakartaSans-ExtraBold.ttf
+          weight: 800
+    - family : DMSerifDisplay
+      fonts:
+        - asset: assets/fonts/DMSerifDisplay-Italic.ttf
+          style: italic
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  # Bold "P" in Calibri, black on white. Regenerate with: dart run flutter_launcher_icons
+  image_path: "assets/icon/icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icon/foreground.png"
