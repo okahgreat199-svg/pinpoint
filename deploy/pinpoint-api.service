@@ -1,0 +1,23 @@
+[Unit]
+Description=Pinpoint attendance API
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pinpoint
+WorkingDirectory=/opt/pinpoint/api
+ExecStart=/opt/pinpoint/api/SeatCharter.Api
+EnvironmentFile=/etc/pinpoint/pinpoint.env
+Restart=always
+RestartSec=5
+# Hardening: the API only needs its own folder and the log directory.
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+# Data-protection keys (Identity tokens) live in ~/.aspnet, so they survive restarts.
+ReadWritePaths=/var/log/pinpoint /opt/pinpoint/.aspnet
+
+[Install]
+WantedBy=multi-user.target
